@@ -1,6 +1,7 @@
 extends Node2D
 
 var timer = 0
+<<<<<<< HEAD
 var images_obstacles = {
 	0 : preload("res://Assets/enemyBlack1.png"),
 	1 : preload("res://Assets/enemyBlue5.png"),
@@ -9,6 +10,8 @@ var images_obstacles = {
 }
 var keys_stored = []
 var player_choice = []
+=======
+>>>>>>> 9c375c84f738b0139e89e771973b9b83e600e63d
 
 
 func on_portal_entered(body):
