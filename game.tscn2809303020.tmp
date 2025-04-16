@@ -31,7 +31,7 @@ vertical_offset = 300.0
 position = Vector2(782, -11)
 
 [node name="Medium Obstacle" parent="Obstacle" instance=ExtResource("6_ryrav")]
-position = Vector2(852, -25)
+position = Vector2(852, 0)
 
 [node name="High Obstacle" parent="." instance=ExtResource("7_eow3j")]
 position = Vector2(2257, 526)

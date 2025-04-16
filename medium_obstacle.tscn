@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cagykwwabfswq"]
+[gd_scene load_steps=6 format=3 uid="uid://cagykwwabfswq"]
 
 [ext_resource type="Texture2D" uid="uid://dd1xub7t3axk3" path="res://icon.svg" id="1_3w1pi"]
+[ext_resource type="Script" uid="uid://bxh3w8c3rr7ht" path="res://Scripts/medium_obstacle.gd" id="1_l5eu6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3w1pi"]
 size = Vector2(124, 124)
@@ -8,9 +9,13 @@ size = Vector2(124, 124)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l5eu6"]
 size = Vector2(126, 124)
 
-[node name="Medium Obstacle" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yfgui"]
+size = Vector2(135, 805)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Medium Obstacle" type="Node2D"]
+script = ExtResource("1_l5eu6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["hazards"]]
 position = Vector2(0, 580)
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
@@ -19,7 +24,7 @@ texture = ExtResource("1_3w1pi")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_3w1pi")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+[node name="StaticBody2D2" type="StaticBody2D" parent="." groups=["hazards"]]
 position = Vector2(0, 105)
 scale = Vector2(1, 4)
 
@@ -29,3 +34,14 @@ texture = ExtResource("1_3w1pi")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(-1, 2.5)
 shape = SubResource("RectangleShape2D_l5eu6")
+
+[node name="Symbol" type="Sprite2D" parent="."]
+position = Vector2(0, 576)
+
+[node name="Passthrough" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Passthrough"]
+position = Vector2(-1.5, 249.5)
+shape = SubResource("RectangleShape2D_yfgui")
+
+[connection signal="body_entered" from="Passthrough" to="." method="_on_passthrough_body_entered"]
