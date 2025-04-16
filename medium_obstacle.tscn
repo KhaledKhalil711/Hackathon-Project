@@ -13,12 +13,16 @@ size = Vector2(126, 124)
 size = Vector2(135, 805)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [node name="Medium Obstacle" type="Node2D"]
 script = ExtResource("1_l5eu6")
 
 =======
 >>>>>>> 9c375c84f738b0139e89e771973b9b83e600e63d
 [node name="StaticBody2D" type="StaticBody2D" parent="." groups=["hazards"]]
+=======
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+>>>>>>> parent of 9c375c8 (Added the game files)
 position = Vector2(0, 580)
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
@@ -27,12 +31,17 @@ texture = ExtResource("1_3w1pi")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_3w1pi")
 
+<<<<<<< HEAD
 [node name="StaticBody2D2" type="StaticBody2D" parent="." groups=["hazards"]]
 <<<<<<< HEAD
 position = Vector2(0, 105)
 =======
 position = Vector2(0, 48)
 >>>>>>> 9c375c84f738b0139e89e771973b9b83e600e63d
+=======
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(0, 105)
+>>>>>>> parent of 9c375c8 (Added the game files)
 scale = Vector2(1, 4)
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]

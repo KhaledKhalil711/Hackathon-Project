@@ -46,15 +46,6 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump_low") and can_dash:
 		start_dash()
 		jump_sequence.append("low")
-		# Returns the number of times the player collided in the last call
-	for i in get_slide_collision_count():
-		var collision = get_slide_collision(i)
-		var collider = collision.get_collider()
-		if collider.is_in_group("hazards"):
-			kill_player()
-		
-			
-   	
 
 func start_dash():
 	can_dash = false
@@ -78,6 +69,4 @@ func start_dash():
 func get_jump_sequence():
 	return jump_sequence
 
-func kill_player():
-	queue_free()
 		

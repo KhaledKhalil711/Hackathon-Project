@@ -7,6 +7,7 @@
 size = Vector2(116, 596)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [sub_resource type="GDScript" id="GDScript_itn87"]
 script/source = "extends Area2D
 "
@@ -19,6 +20,9 @@ position = Vector2(903, -290)
 script = ExtResource("1_itn87")
 =======
 [node name="Obstacle" type="StaticBody2D" groups=["hazards"]]
+=======
+[node name="Obstacle" type="StaticBody2D"]
+>>>>>>> parent of 9c375c8 (Added the game files)
 position = Vector2(784, -85)
 >>>>>>> 9c375c84f738b0139e89e771973b9b83e600e63d
 
@@ -27,7 +31,7 @@ rotation = -1.56037
 scale = Vector2(8, 1)
 texture = ExtResource("1_s3dxp")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["hazards"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-4, 198)
 shape = SubResource("RectangleShape2D_s3dxp")
 

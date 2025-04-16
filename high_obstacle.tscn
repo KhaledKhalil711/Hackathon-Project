@@ -9,7 +9,7 @@ size = Vector2(126.196, 123.01)
 [node name="High Obstacle" type="Node2D"]
 script = ExtResource("1_b2761")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["hazards"]]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(0, 46)
 scale = Vector2(-1.09354, 3.74435)
 
