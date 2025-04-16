@@ -6,6 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s3dxp"]
 size = Vector2(116, 596)
 
+<<<<<<< HEAD
 [sub_resource type="GDScript" id="GDScript_itn87"]
 script/source = "extends Area2D
 "
@@ -16,6 +17,10 @@ size = Vector2(167, 1372)
 [node name="Obstacle" type="StaticBody2D" groups=["hazards"]]
 position = Vector2(903, -290)
 script = ExtResource("1_itn87")
+=======
+[node name="Obstacle" type="StaticBody2D" groups=["hazards"]]
+position = Vector2(784, -85)
+>>>>>>> 9c375c84f738b0139e89e771973b9b83e600e63d
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = -1.56037

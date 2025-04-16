@@ -12,9 +12,12 @@ size = Vector2(126, 124)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yfgui"]
 size = Vector2(135, 805)
 
+<<<<<<< HEAD
 [node name="Medium Obstacle" type="Node2D"]
 script = ExtResource("1_l5eu6")
 
+=======
+>>>>>>> 9c375c84f738b0139e89e771973b9b83e600e63d
 [node name="StaticBody2D" type="StaticBody2D" parent="." groups=["hazards"]]
 position = Vector2(0, 580)
 
@@ -25,7 +28,11 @@ texture = ExtResource("1_3w1pi")
 shape = SubResource("RectangleShape2D_3w1pi")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="." groups=["hazards"]]
+<<<<<<< HEAD
 position = Vector2(0, 105)
+=======
+position = Vector2(0, 48)
+>>>>>>> 9c375c84f738b0139e89e771973b9b83e600e63d
 scale = Vector2(1, 4)
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
