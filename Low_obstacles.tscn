@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s3dxp"]
 size = Vector2(116, 596)
 
-[node name="Obstacle" type="StaticBody2D"]
+[node name="Obstacle" type="StaticBody2D" groups=["hazards"]]
 position = Vector2(784, -85)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -13,6 +13,6 @@ rotation = -1.56037
 scale = Vector2(8, 1)
 texture = ExtResource("1_s3dxp")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["hazards"]]
 position = Vector2(-4, 198)
 shape = SubResource("RectangleShape2D_s3dxp")

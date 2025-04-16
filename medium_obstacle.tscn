@@ -10,7 +10,7 @@ size = Vector2(126, 124)
 
 [node name="Medium Obstacle" type="Node2D"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["hazards"]]
 position = Vector2(0, 580)
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
@@ -19,8 +19,8 @@ texture = ExtResource("1_3w1pi")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_3w1pi")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2(0, 105)
+[node name="StaticBody2D2" type="StaticBody2D" parent="." groups=["hazards"]]
+position = Vector2(0, 48)
 scale = Vector2(1, 4)
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
