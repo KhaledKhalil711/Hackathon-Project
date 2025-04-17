@@ -52,9 +52,6 @@ func _physics_process(delta: float) -> void:
 		var collider = collision.get_collider()
 		if collider.is_in_group("hazards"):
 			kill_player()
-		
-			
-   	
 
 func start_dash():
 	can_dash = false
@@ -79,5 +76,4 @@ func get_jump_sequence():
 	return jump_sequence
 
 func kill_player():
-	queue_free()
-		
+	queue_free()	

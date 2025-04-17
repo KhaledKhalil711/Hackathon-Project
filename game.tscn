@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c8k3iabeoolm2"]
+[gd_scene load_steps=9 format=3 uid="uid://c8k3iabeoolm2"]
 
 [ext_resource type="PackedScene" uid="uid://8fjmb34q5xmj" path="res://Players/Player.tscn" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://bn7a37b5084d3" path="res://Scripts/game.gd" id="1_feb5d"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://cagykwwabfswq" path="res://medium_obstacle.tscn" id="6_ryrav"]
 [ext_resource type="PackedScene" uid="uid://2jcal4eg068a" path="res://high_obstacle.tscn" id="7_eow3j"]
 [ext_resource type="PackedScene" uid="uid://dsr8q1r2qbtva" path="res://portal.tscn" id="8_j5wjh"]
-[ext_resource type="Script" uid="uid://4d60oimqt5u6" path="res://Scripts/game_manager.gd" id="9_vef74"]
 
 [node name="Game" type="Node2D"]
 position = Vector2(0, 8)
@@ -31,13 +30,12 @@ vertical_offset = 300.0
 position = Vector2(782, -11)
 
 [node name="Medium Obstacle" parent="Obstacle" instance=ExtResource("6_ryrav")]
-position = Vector2(852, -25)
+position = Vector2(852, 0)
 
 [node name="High Obstacle" parent="." instance=ExtResource("7_eow3j")]
 position = Vector2(2257, 526)
 
 [node name="Portal" parent="." instance=ExtResource("8_j5wjh")]
-position = Vector2(6736, 504)
+position = Vector2(6696, 505)
 
-[node name="Game Manager" type="Node2D" parent="."]
-script = ExtResource("9_vef74")
+[node name="Area2D2" type="Area2D" parent="Portal"]
