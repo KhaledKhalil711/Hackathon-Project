@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://btjqnn7e2sc77"]
+
+[ext_resource type="Script" uid="uid://bvngi2rma06mi" path="res://Scripts/low_obstacles.gd" id="1_kre8d"]
+[ext_resource type="Texture2D" uid="uid://dd1xub7t3axk3" path="res://icon.svg" id="2_8u2qg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1xxbd"]
+size = Vector2(125, 127.655)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7iufp"]
+size = Vector2(189, 962)
+
+[node name="Low_Obstacle" type="Node2D"]
+script = ExtResource("1_kre8d")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["hazards"]]
+scale = Vector2(0.84, 4.52)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("2_8u2qg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-0.59524, 0.110621)
+shape = SubResource("RectangleShape2D_1xxbd")
+
+[node name="Symbol" type="Sprite2D" parent="."]
+position = Vector2(0, 216)
+
+[node name="passthrough" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="passthrough"]
+position = Vector2(3.5, 41)
+shape = SubResource("RectangleShape2D_7iufp")
+
+[connection signal="body_entered" from="passthrough" to="." method="_on_passthrough_body_entered"]

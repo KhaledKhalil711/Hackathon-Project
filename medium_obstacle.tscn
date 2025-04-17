@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://gek72b3n8qee"]
+
+[ext_resource type="Script" uid="uid://bxh3w8c3rr7ht" path="res://Scripts/medium_obstacle.gd" id="1_l5eu6"]
+[ext_resource type="Texture2D" uid="uid://dd1xub7t3axk3" path="res://icon.svg" id="2_l5eu6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yfgui"]
+size = Vector2(124, 126)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f6qkq"]
+size = Vector2(137, 463)
+
+[node name="medium_obstacle" type="Node2D"]
+script = ExtResource("1_l5eu6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["hazards"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("2_l5eu6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_yfgui")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." groups=["hazards"]]
+position = Vector2(0, -311)
+scale = Vector2(1, 1.64)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
+texture = ExtResource("2_l5eu6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+shape = SubResource("RectangleShape2D_yfgui")
+
+[node name="Symbol" type="Sprite2D" parent="."]
+position = Vector2(0, -35)
+
+[node name="passthrough" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="passthrough"]
+position = Vector2(-1.5, -158.5)
+shape = SubResource("RectangleShape2D_f6qkq")
+
+[connection signal="body_entered" from="passthrough" to="." method="_on_passthrough_body_entered"]

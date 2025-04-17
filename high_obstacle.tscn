@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://2jcal4eg068a"]
+[gd_scene load_steps=5 format=3 uid="uid://2jcal4eg068a"]
 
 [ext_resource type="Script" uid="uid://bsx21hmprmxd6" path="res://Scripts/high_obstacle.gd" id="1_b2761"]
 [ext_resource type="Texture2D" uid="uid://dd1xub7t3axk3" path="res://icon.svg" id="1_gp44t"]
@@ -6,10 +6,13 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gp44t"]
 size = Vector2(126.196, 123.01)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b2761"]
+size = Vector2(183, 665)
+
 [node name="High Obstacle" type="Node2D"]
 script = ExtResource("1_b2761")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["hazards"]]
 position = Vector2(0, 46)
 scale = Vector2(-1.09354, 3.74435)
 
@@ -22,3 +25,13 @@ shape = SubResource("RectangleShape2D_gp44t")
 
 [node name="Symbol" type="Sprite2D" parent="."]
 position = Vector2(0, -156)
+
+[node name="passthrough" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="passthrough"]
+position = Vector2(-1.5, 0.5)
+shape = SubResource("RectangleShape2D_b2761")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[connection signal="body_entered" from="passthrough" to="." method="_on_passthrough_body_entered"]
