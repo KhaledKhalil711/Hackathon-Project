@@ -1,12 +1,20 @@
-[gd_scene format=3 uid="uid://kx65vplrgesi"]
+[gd_scene load_steps=4 format=3 uid="uid://kx65vplrgesi"]
 
-[node name="Control" type="Control"]
+[ext_resource type="FontFile" uid="uid://x7he4q7nvbkv" path="res://Assets/kenvector_future.ttf" id="1_0ghu6"]
+[ext_resource type="Script" uid="uid://coamshtniylki" path="res://game_over.gd" id="1_5ruhh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5ruhh"]
+font = ExtResource("1_0ghu6")
+font_size = 10
+
+[node name="Game Over" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_5ruhh")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
@@ -24,7 +32,23 @@ offset_bottom = 550.0
 
 [node name="Label" type="Label" parent="Panel"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 12.0
+offset_top = 118.0
+offset_right = 60.0
+offset_bottom = 141.0
+scale = Vector2(4.55199, 2.28229)
+text = "Score:"
+label_settings = SubResource("LabelSettings_5ruhh")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 204.0
+offset_right = 122.0
+offset_bottom = 235.0
+scale = Vector2(3.93348, 4.42724)
+text = "Restart"
+
+[connection signal="button_down" from="Panel/Button" to="." method="_on_button_button_down"]
