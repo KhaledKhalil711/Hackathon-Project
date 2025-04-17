@@ -12,4 +12,5 @@ func update_score():
 
 
 func _on_button_button_down() -> void:
-	get_tree().reload_current_scene() 
+	GameManager.player_dead = false
+	get_tree().change_scene_to_file("res://game.tscn")

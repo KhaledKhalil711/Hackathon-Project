@@ -1,4 +1,18 @@
-[gd_scene format=3 uid="uid://ccatr2pts3uec"]
+[gd_scene load_steps=3 format=3 uid="uid://ccatr2pts3uec"]
+
+[ext_resource type="Script" uid="uid://bbxx178qu3o4t" path="res://Scripts/select_shapes.gd" id="1_ph0u5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4mpiy"]
+bg_color = Color(0.722634, 0.581751, 0.171061, 1)
+border_width_left = 3
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+shadow_size = 5
 
 [node name="Select_shapes" type="Control"]
 layout_mode = 3
@@ -7,6 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ph0u5")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
@@ -16,26 +31,43 @@ offset_right = 1160.0
 offset_bottom = 652.0
 color = Color(0.784314, 0.529412, 0.603922, 1)
 
-[node name="Button" type="Button" parent="."]
+[node name="First Shape" type="Button" parent="."]
 layout_mode = 0
 offset_left = 503.0
-offset_top = 172.0
+offset_top = 203.0
 offset_right = 626.0
-offset_bottom = 203.0
+offset_bottom = 234.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_4mpiy")
 text = "The first shape"
 
-[node name="Button2" type="Button" parent="."]
+[node name="Second Shape" type="Button" parent="."]
 layout_mode = 0
-offset_left = 494.0
-offset_top = 273.0
-offset_right = 641.0
-offset_bottom = 304.0
-text = "The second shape"
+offset_left = 507.0
+offset_top = 296.0
+offset_right = 653.0
+offset_bottom = 327.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_4mpiy")
+text = "The Second Shape"
 
-[node name="Button3" type="Button" parent="."]
+[node name="Third Shape" type="Button" parent="."]
 layout_mode = 0
-offset_left = 498.0
-offset_top = 408.0
-offset_right = 637.0
-offset_bottom = 439.0
-text = "The Third Button"
+offset_left = 503.0
+offset_top = 374.0
+offset_right = 629.0
+offset_bottom = 405.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_4mpiy")
+text = "The third shape"
+
+[node name="Fourth shape" type="Button" parent="."]
+layout_mode = 0
+offset_left = 505.0
+offset_top = 462.0
+offset_right = 631.0
+offset_bottom = 493.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_4mpiy")
+text = "The third shape"
+
+[connection signal="button_down" from="First Shape" to="." method="_on_first_shape_button_down"]
+[connection signal="button_down" from="Second Shape" to="." method="_on_second_shape_button_down"]
+[connection signal="button_down" from="Third Shape" to="." method="_on_third_shape_button_down"]
+[connection signal="button_down" from="Fourth shape" to="." method="_on_fourth_shape_button_down"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c8k3iabeoolm2"]
+[gd_scene load_steps=12 format=3 uid="uid://c8k3iabeoolm2"]
 
 [ext_resource type="PackedScene" uid="uid://bbk0oao25dv1j" path="res://Ground.tscn" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://8fjmb34q5xmj" path="res://Players/Player.tscn" id="2_e2o6t"]
@@ -7,6 +7,8 @@
 [ext_resource type="Script" uid="uid://ce1iyfhksd5jw" path="res://Scripts/game_manager.gd" id="5_ryrav"]
 [ext_resource type="PackedScene" uid="uid://gek72b3n8qee" path="res://medium_obstacle.tscn" id="6_ryrav"]
 [ext_resource type="FontFile" uid="uid://x7he4q7nvbkv" path="res://Assets/kenvector_future.ttf" id="7_eow3j"]
+[ext_resource type="PackedScene" uid="uid://kx65vplrgesi" path="res://Game_Over.tscn" id="8_j5wjh"]
+[ext_resource type="PackedScene" uid="uid://ccatr2pts3uec" path="res://Select_shapes.tscn" id="8_vef74"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_j5wjh"]
 font = ExtResource("7_eow3j")
@@ -30,12 +32,10 @@ vertical_offset = 250.0
 script = ExtResource("5_ryrav")
 
 [node name="Portal" parent="." instance=ExtResource("4_7jktm")]
-position = Vector2(6730, 510)
-
-[node name="medium_obstacle" parent="." instance=ExtResource("6_ryrav")]
-position = Vector2(1146, 565)
+position = Vector2(1439, 543)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
 
 [node name="Score" type="Label" parent="CanvasLayer"]
 offset_right = 40.0
@@ -50,3 +50,12 @@ offset_bottom = 23.0
 text = "Timer: "
 label_settings = SubResource("LabelSettings_vef74")
 horizontal_alignment = 2
+
+[node name="Game Over" parent="CanvasLayer" instance=ExtResource("8_j5wjh")]
+visible = false
+
+[node name="Select_shapes" parent="CanvasLayer" instance=ExtResource("8_vef74")]
+visible = false
+
+[node name="medium_obstacle" parent="." instance=ExtResource("6_ryrav")]
+position = Vector2(3034, 363)
