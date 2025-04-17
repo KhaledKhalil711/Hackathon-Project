@@ -76,4 +76,6 @@ func get_jump_sequence():
 	return jump_sequence
 
 func kill_player():
+	GameManager.player_dead = true
+	print("The value of the boolean is ", GameManager.player_dead)
 	queue_free()	
