@@ -16,10 +16,6 @@ config/features=PackedStringArray("4.4", "Forward Plus")
 run/max_fps=60
 config/icon="res://icon.svg"
 
-[autoload]
-
-GameManager="*res://Scripts/game_manager.gd"
-
 [input]
 
 jump_low={
